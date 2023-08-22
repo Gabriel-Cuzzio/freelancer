@@ -1,0 +1,84 @@
+:root{
+  --principal: #0097A7;
+  --secundario: #ffc107;
+  --blanco: #fff;
+  --gris: #757575;
+  --grisClaro: #dfe9f3;
+  --negro: #000;
+  --fuentePrincipal:'Krub',sans-serif;
+
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}/*Paul irish*/
+body{
+  font-size: 1.6rem;
+}
+h1,h2,h3{
+  font-family: var(--fuentePrincipal);
+  text-align: center;
+}
+
+h1{
+  font-size: 3.8rem;
+}
+h2{
+  font-size: 2.8rem;
+}
+h3{
+  font-size: 1.8rem;
+}
+p{
+  font-family: var(--fuentePrincipal);
+}
+nav{
+  background-color: var(--principal);
+  display: flex;
+  justify-content: space-evenly;
+}
+a{
+  text-decoration: none;/*Propiedad para sacar el subrayado al enlace*/
+  font-family: var(--fuentePrincipal);
+  font-weight: bold; /*Grosor de la fuente*/
+  padding: 1rem;/*Margen interno*/
+  /*margin: 1rem; margen externo*/
+  color: var(--blanco);
+}
+a:hover{
+  background-color: var(--secundario);/*Esto es cuando paso el click por encima*/
+}
+.boton{
+  background-color: var(--principal);
+  color: var(--blanco);
+  padding: 1rem 5rem;
+  border-radius: .7rem; /*bordes redondeados*/
+  text-transform: uppercase;/*Pone las letras en mayuscula y lowercase todas en minusculas*/
+  
+}
+
+/**Seccion imagen**/
+.hero{
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;/*que no se repita la imagen al reducir*/
+  background-size: cover;/*que cubra todo el espacio del contenedor*/
+  height: 45rem; /*Le damos un alto al contenedor*/
+  position: relative;/*va con el position absolute*/
+}
+.contenido-hero h2,
+.contenido-hero p{
+  color: var(--blanco);
+}/*Especificidad, dejo un espacio entre el padre y el hijo */
+.contenido-hero{
+  background-color: rgba(0, 0, 0, .3); /*rgba color que me da la opacidad ej rgba:(0,0,0,.5)*/
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,266 @@
+:root {
+    --principal: #0097A7;
+    --secundario: #ffc107;
+    --blanco: #fff;
+    --gris: #757575;
+    --grisClaro: #dfe9f3;
+    --negro: #000;
+    --fuentePrincipal: 'Krub', sans-serif;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*Paul irish*/
+body {
+    font-size: 1.6rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-family: var(--fuentePrincipal);
+}
+
+nav {
+    background-color: var(--principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+@media(min-width: 768px){
+    nav{
+        flex-direction: row;
+    }
+}
+a {
+    text-decoration: none;
+    /*Propiedad para sacar el subrayado al enlace*/
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+    /*Grosor de la fuente*/
+    padding: 1rem;
+    /*Margen interno*/
+    /*margin: 1rem; margen externo*/
+    color: var(--blanco);
+}
+
+a:hover {
+    background-color: var(--secundario);
+    /*Esto es cuando paso el click por encima*/
+}
+
+.boton {
+    background-color: var(--principal);
+    color: var(--blanco);
+    padding: 1rem 5rem;
+    border-radius: .7rem;
+    /*bordes redondeados*/
+    text-transform: uppercase;
+    /*Pone las letras en mayuscula y lowercase todas en minusculas*/
+    border: none;
+    font-family: var(--fuentePrincipal);
+    font-weight: bold;
+}
+.flex .boton{
+    width: 100%;
+    margin-top: 1rem;
+}
+.flex .boton{
+    cursor: pointer; /*pongo la manito arriba del boton */
+}
+@media (min-width:768px){
+    .flex .boton{
+        width: auto;
+    }
+    .alinear-derecha{
+        text-align: right;
+    }
+}
+
+/**Seccion imagen**/
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    /*que no se repita la imagen al reducir*/
+    background-size: cover;
+    /*que cubra todo el espacio del contenedor*/
+    height: 45rem;
+    /*Le damos un alto al contenedor*/
+    position: relative;
+    /*va con el position absolute*/
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
+}
+
+/*Especificidad, dejo un espacio entre el padre y el hijo */
+.contenido-hero {
+    background-color: rgba(0, 0, 0, .3);
+    /*rgba color que me da la opacidad ej rgba:(0,0,0,.5)*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/**main servicios**/
+.contenedor {
+    max-width: 75rem;
+    /*ancho del contenedor, fijando un maximo*/
+    background-color: rgb(223, 236, 184);
+    margin: 0 auto;
+    /**propiedad para centrar el contenedor*/
+}
+
+.sombra {
+    -webkit-box-shadow: 10px 10px 11px -4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 11px -4px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 11px -4px rgba(0, 0, 0, 0.75);
+    border-radius: .8rem;
+    padding: 2rem;
+}
+
+@media(min-width: 480px) {
+    .servicios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 2rem;
+    }
+
+    /*Cambiaria a 768px*/
+}
+
+.servicio {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.servicio p {
+    line-height: 2;
+    /*interlineado para el parrafo, se ponen numeros*/
+    text-align: center;
+}
+
+h3 {
+    color: var(--principal);
+    font-weight: 300;
+}
+
+.iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--secundario);
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/**Formulario**/
+.formulario {
+    background-color: var(--gris);
+    margin: 0 auto;
+    width: min(60rem, 100%);
+    /*Si yo achico la pantalla respeta el ancho de pantalla*/
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    /*mayuscula*/
+    text-align: center;
+    color: var(--secundario);
+    font-weight: bold;
+    /*cambio el grosor de la letra*/
+    margin-bottom: 2rem;
+}
+
+label {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.6;
+    font-weight: 700;
+    /*es bold porque la fuente mas gruesa es 700*/
+    color: var(--blanco);
+    display: block;
+    margin: .5rem;
+}
+
+.input-text {
+    padding: 1.5rem;
+    border-radius: .5rem;
+    border: none;
+    /*Le saco la sombrita que tiene*/
+    width: 100%;
+    /*toma el ancho del contenedor*/
+
+}
+
+textarea {
+    height: 15rem;
+    resize: none;
+    /*para evitar modificar el cuadro de texto tanto en alto como en ancho*/
+}
+
+@media(min-width: 768px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 20rem;
+        /*Los dos valores de fila son auto y el tercero de 20 rem*/
+        column-gap: 2rem;/*dejo el espacio entre columnas, entre nombre y telefono*/
+
+    }
+
+    .campo:nth-child(3), .campo:nth-child(4)
+
+    /*agarro el tercer(campo y el 4to tambien) elemento que vaya de la linea 1 a la linea 3*/
+        {
+        grid-column: 1/3;
+        /*quiero que vaya de la columna 1 a la 3*/
+    }
+    
+    
+}
